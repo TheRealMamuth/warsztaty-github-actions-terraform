@@ -18,4 +18,5 @@ variable "default_name" {
 
 variable "ip_range" {
   description = "IP range for the VPC"
+  default = "10.30.30.0/24"
 }
