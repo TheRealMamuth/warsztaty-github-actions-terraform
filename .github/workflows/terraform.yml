@@ -1,0 +1,25 @@
+name: "Terraform Example"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform_fmt:
+    name: "Terraform Fmt"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform fmt
+        run: |
+          terraform -version
+          terraform fmt -check
+  #terraform_validate:
+  #terraform_plan:
+  #terraform_apply:

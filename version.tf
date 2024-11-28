@@ -7,5 +7,14 @@ terraform {
       version = ">= 2.44.1"
     }
   }
+
+  cloud { 
+    organization = "test_github_actions" 
+
+    workspaces { 
+      name = "warsztaty-github-actions-terraform" 
+    } 
+  }   
+
   required_version = ">= 1.9"
 }
