@@ -58,7 +58,9 @@ jobs:
 
       - name: "Create vars file"
         run: |
-          echo "${{ secrets.TF_VARIABLES }}" > .auto.tfvars
+          cat <<EOF > .auto.tfvars
+          ${{ secrets.TF_VARS }}
+          EOF
 
       - name: "Terraform init"
         run: |
